@@ -1,0 +1,257 @@
+import random, os
+
+beschreibung = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverzüglich) erfolgen",
+	125:	"Nichtigkeit wegen Formmangels",
+	138:	"Wucher",
+	145:	"Angebot + Anname:\n 1. RBW muss erkennbar sein\n 2. Erkklärung muss auf Abschluss des Vertrages "
+			"gerichtet sein\n 3. essentialia negotii müssen sehr genau bestimmt sein\n 4. uneingeschränkte Zustimmung",
+	146:	"Erlöschen des Antrags: Antrag erlischt, wenn er abgelehnt wurde oder nicht rechtzeitig angenommen wurde",
+	147:	"Wenn keine Annahmefrist bestimmt wurde\n 1. unter Anwesenden: unverzüglich\n 2. unter Abwesenden: "
+			"wann die Antwort unter regelmäßigen Umständen erwartet werden darf",
+	148:	"Bestimmung einer Annahmefrist: Annahme kann nur innerhalb dieser Frist erfolgen",
+	150:	"Verspätete und Abändernde Annahme",
+	194:	"Anspruch: Das Recht von einem anderen ein Tun oder Unterlassen zu verlangen",
+	195:	"Verjährungsfrist: 3 Jahre",
+	199:	"Beginn der Regelmäßigen Verjährungsfrist: zum Jahresende in dem der Anspruch entstanden ist",
+	212:	"Neubeginn der Verjährung",
+	214:	"Wirkung der Verjährung:\n(1) Nach Eintritt der Verjährung darf Schuldner Leistung verweigern" 
+			"\n(2) Geleistete Zahlungen können nicht zurückgefordert werden",
+	241:	"Pflichten aus dem Schuldverhältnis (Hauptleistungspflichten):\n(1) Gläubiger is berechtigt, von dem "
+			"Schuldner eine Leistung zu fordern, die auch aus einem Unterlassen bestehen kann.\n(2) "
+			"Rüchkischtsnahmepflichten: Das Schuldverhältnis kann zur Rücksicht "
+			"auf die Rechte, Rechtsgüter und Interessen des anderen Teils verpflichten.",
+	242:	"Treu und Glauben (Nebenleistungspflichten):\n 1. Schrankenfunktion\n 2. Konkretisierungs- und "
+			"Ergänzungsfunktion\n 3. Kontroll- und Korrekturfunktion",
+	249:	"Art und Umfang des Schadenersatzes:\n(1) Zustand herstellen, der bestehen würde, wenn der Schaden "
+			"nicht entstanden wäre (Naturalrestitution)\n(2) Statt Wiederherstellung des ursprünglichen Zustands, "
+			"kann man auch den erforderlichen Geldbetrag verlangen",
+	253:	"Schmerzensgeld:\n(1) Für einen Schaden, der kein Vermögensschaden ist, kann Geld nur in den durch das "
+			"Gesetz bestimmten Fällen gefordert werden.\n(2) Bei Körperverletzung kann auch eine billige "
+			"Entschädigung in Geld gefordert werden",
+	254:	"Mitverschulden",
+	276:	"Vertretenmüssen:\n- Vorsatz: Pflichtverletzung wissentlich und willentlich\n- (II) Fahrlässig: wenn die"
+			" im Verkehr erorderliche Sorgfalt außer Acht gelassen wird",
+	278:	"Der Schuldner hat ein Verschulden seines gesetzichen Vertresters und der Personen, deren er sich zur "
+			"Erfüllung seiner Verbindlichkeiten bedient, in gleichem Umfang zu vertreten, wie eigenens Verschulden",
+	280:	"Schadensersatz wegen Pflichtverletzung:\n- Vorraussetzung:\n   Schuldverhältnis (311)\n   und "
+			"Pflichtverletzung\n   Schuldner muss Pflichtverletzung zu vertreten haben\n   es muss ein Schaden"
+			" entstanden sein durch die PV\n- Beweislast beim Schuldner",
+	288:	"Verzugszinsen: 9 PP für Geschäftsleute und 5 PP für Verbaucher",
+	293:	"Annahmeverzug",
+	305:	"AGB",
+	311:	"(1) Zur Begründung eines Schuldverhältnisses ist ein Vetrag zwischen "
+			"den Beteiligten erorderlich\n(2)\nSchuldverhältnis entsteht auch, wenn:"
+			"\n 1. Aufnahme von Vertragsverhandlungen\n 2. Anbahnung eines Vertrages\n 3. ähnliche geschäftliche "
+			"Kontakte",
+	362:	"Erlöschen durch Leistung",
+	366:	"Anrechnung der Leistung auf mehrere Forderungen:\n(2) Wenn Reihenfolge vom Schuldner nicht bestimmt wurde"
+			"\n 1. fällige Forderung\n 2. geringere Sicherheit\n 3. lästigere Forderung\n 4. ältere"
+			" Forderung\n 5. jede Forderung wird verhältnismäßig getilgt",
+	367:	"Tilgungsreihenfolge:\n(1)\n 1. Kosten\n 2. Zinsen\n 3. Hauptleistung \n"
+			"(2) Weicht Schuldner von der Reihenfolge ab, kann Gläubiger die Annahme der Leistung ablehnen ohne"
+			" in Annahmeverzug zu gelangen",
+	389:	"Wirkund der Aufrechnung: Wenn Ansprüche sich decken, erlischen sie",
+	433:	"Kaufvertrag (Pflichten):\n(1) Verkäufer ist verpflichtet dem Käufer die Sache zu übergeben und Besitzt" 
+			" zu verschaffen. Die Sache muss außerdem frei von Sach- und Rechtsmängeln sein. \n(2) Der Käufer ist "
+			"verpflichtet dem Verkäufer den vereinbarten Preis zu zahlen und ihm die Sache abzunehmen",
+	516:	"Schenkung",
+	535:	"Mietvertrag",
+	662:	"Vertragstypische Pflichten beim Auftrag",
+	823:	"Schadensersatzpflichs:\n- setzt kein Schuldverhältnis vorraus\n- kein vertraglicher, sondern "
+			"gesetzlicher Anspruch\n- Gläubiger (Geschädigte) trägt die Beweislast",
+	831:	"Haftung für den Verrichtungsfehilfen:\n- Jeder der mit Wissen und Wollen des Geschäftsherrn in dessen "
+			"Aufgabenkreis tätig wird und von dessen Weisung abhängig ist\n- nur unselbstständige Hilfspersonen\n- "
+			"Schädiger kann sich entlasten (exkulpieren) indem er z.B. beweist, dass er die Hilfsperson sorgfältig "
+			"ausgewählt und überwacht hat",
+	844:	"Ersatzansprüche Dritter bei Tötung",
+	"133, 157":	"objektiver Betrachter bzw. Rechtsbindungswille?",
+	"241I, 280I":	"Vertragliche Primär- oder Erfüllungsansprüche werden nicht oder nicht ordnungsgemäß erfüllt",
+	"280, 249":	"Pauschalisierter Schadensersatzanspruch",
+	"280I, 311II, 241II":	"Culpa in contrahendo: Wegen Verletzung der Rücksichtsnahmepflichten aus einem "
+	"vorvertraglichen oder vertragsähnlichen Schuldverhältnis entsteht ein Schadensersatzanspruch",
+	"311b I":	"Verträge über Grundstücke: bedarf einer notariellen Beurkundung",
+	"387, 388":	"Aufrechnung",
+	}
+
+paragraph = [121,
+	125,
+	138,
+	145,
+	146,
+	147,
+	148,
+	150,
+	194,
+	195,
+	199,
+	212,
+	214,
+	241,
+	242,
+	249,
+	253,
+	254,
+	276,
+	278,
+	280,
+	288,
+	293,
+	305,
+	311,
+	362,
+	366,
+	367,
+	389,
+	433,
+	516,
+	535,
+	662,
+	823,
+	831,
+	844,
+	"133, 157",
+	"241I, 280I",
+	"280, 249",
+	"280I, 311II, 241II",
+	"311b I",
+	"387, 388"]
+
+
+
+def alleeinmal():
+	os.system("Clear")
+	loop = True
+	while loop == True:
+		z = paragraph.copy()
+		falsch = []
+		for i in range(len(paragraph)):
+			os.system("clear")
+			index = random.randint(0, len(z)-1)
+			b = z[index]
+			print(beschreibung[b])
+			input()
+			print(z[index])
+			print("\n\n")
+			try:
+				c = int(input("0: Exit\n1: Falsch\n-> "))
+				if c == 0:
+					os.system("clear")
+					loop = False
+					break
+				if c == 1:
+					falsch.append(z[index])
+					z.pop(index)
+			except:
+				z.pop(index)
+				continue
+		os.system("clear")
+		print("Folgende Paragraphen musst du dir noch einmal anschauen:")
+		for j in range(len(falsch)):
+			print(falsch[j])
+		print("\n")
+		print("Richtig: ")
+		print(len(paragraph)-len(falsch))
+		if loop == False:
+			break
+		try:
+			falscheueben = int(input("\n0: Falsche üben? "))
+		except:
+			break
+		if falscheueben == 0:
+			for k in range(5):
+				for l in range(len(falsch)):
+					os.system("clear")
+					print("Runde " + str(k+1) + "/5")
+					print(beschreibung[falsch[l]])
+					input()
+					print(falsch[l])
+					input()
+			os.system("clear")
+			print("Geschafft!!!")
+			input()
+		else:
+			break
+
+
+
+def intensiv():
+	os.system("Clear")
+	anzahlvokabeln = int(input("Wie viele Vokabeln möchtest du jeweils intensiv lernen?\n-> "))
+	loop = True
+	while loop == True:
+		lernen = []
+		zufallszahlen = []
+		for i in range(anzahlvokabeln):
+			while True:
+				zz = random.randint(0, len(paragraph)-1)
+				if zz in zufallszahlen:
+					continue
+				else:
+					break
+			lernen.append(paragraph[zz])
+			zufallszahlen.append(zz)
+		for i in range(3):
+			for j in range(anzahlvokabeln):	
+				os.system("clear")
+				print(beschreibung[lernen[j]])
+				input()
+				print(lernen[j])
+				print("\n\n")
+				try:
+					c = int(input("0: Exit\n-> "))
+					if c == 0:
+						os.system("clear")
+					loop = False
+					break
+				except:
+					continue
+			if loop == False:
+				break
+		os.system("Clear")
+		print("Nächster Stapel")
+		input()
+
+
+
+def zufälligalle():
+	os.system("Clear")
+	while True:
+		os.system("clear")
+		z = random.choice(y)
+		print(x[z])
+		input()
+		print(z)
+		print("\n\n")
+		try:
+			a = int(input("0: Exit\n->"))
+			if a == 0:
+				os.system("clear")
+				break
+		except:
+			continue
+
+
+
+while True:
+	os.system("clear")
+	print("0: Alle Vokabeln einmal durchgehen")
+	print("1: Vokabeln päckchenweise intensiv lernen")
+	print("2: Alle Vokabeln zufällig durcheinander")
+	print("3: Ende")
+	print()
+	try:
+		modus = int(input("-> "))
+	except:
+		print("Wrong Input ...")
+		continue
+	if modus == 0:
+		alleeinmal()
+	if modus == 1:
+		intensiv()
+	if modus == 2:
+		zufälligalle()
+	if modus == 3:
+		os.system("clear")
+		break
+	else:
+		continue
