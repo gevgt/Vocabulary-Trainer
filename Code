@@ -169,6 +169,7 @@ def alleeinmal():
 			os.system("clear")
 			print("Geschafft!!!")
 			input()
+			break
 		else:
 			break
 
