@@ -1,6 +1,14 @@
+#Module
+
 import random, os
 
-beschreibung = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverzüglich) erfolgen",
+
+
+
+
+# Kapitel
+
+beschreibung1 = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverzüglich) erfolgen",
 	125:	"Nichtigkeit wegen Formmangels",
 	138:	"Wucher",
 	145:	"Angebot + Anname:\n 1. RBW muss erkennbar sein\n 2. Erkklärung muss auf Abschluss des Vertrages "
@@ -73,7 +81,7 @@ beschreibung = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverzü
 	"387, 388":	"Aufrechnung",
 	}
 
-paragraph = [121,
+paragraph1 = [121,
 	125,
 	138,
 	145,
@@ -116,7 +124,80 @@ paragraph = [121,
 	"311b I",
 	"387, 388"]
 
+beschreibung2 = {119:	"Anfechtbarkeit wegen Irrtums:\n(1) Inhaltsirrtum (25 gros) / Erklärungsirrtum Tippfehler\n"
+	"(2) Eigenschaftsirrtum (Irrtum über: Aussehen, Herkunft, Original/Fälschung ... Wert ist "
+	"KEINE Eigenschaft)",
+	122:	"Anpfechtungspflicht des Anfechtenden (Vertrauensschaden):\n(1)Der Anfechtende muss "
+			"Anfechtungsgegner den Schaden ersetzen, der dadurch entstanden ist, dass er auf die "
+			"Gültigkeit der Erklärung vertraut hat\n(2) Vertrauensschaden muss nicht ersetzt werden, "
+			"wenn der Geschädigte den Grund der Anfechtbarkeit kannt oder infolge von Fahrlässigkeit "
+			"(276II) nicht kannte",
+	123:	"Anfechtbarkeit wegen Täuschung oder Drohung",
+	130:	"Wirksam werden der Willenserklärung gegenüber Abwesenden:\n(1)\n   - WE, die in Abwesenheit"
+			" abgegeben wird, wird wirksam, in dem Zeitpunkt, in welchem sie zugeht\n   - AUSSER, dem "
+			"anderen geht vorher oder gleichzeitig ein Wiederruf zu",
+	139:	"Teilnichtigkeit:\nIst ein Teil eines Rechtsgeschäft nichtig, so ist das ganze Rechtsgeschäft nichtig, "
+			"wenn nicht anzunehmen ist, dass es auch ohne den nichtigen Teil vorgenommen sein würde.",
+	142:	"Wirkung der Anfechtung: Wird ein Rechtsgeschäft angefochten, so wird es von Anfang an als nichtig "
+			"angesehen",
+	143:	"Anfechtungserklärung:\n(1) Anfechtung erfolgt durch Erklärung gegenüber dem Anfechtungsgegner\n(2) "
+			"Anfechtungsgegener ist der, der aus dem Vertrag unmittelbar ein Recht erworben hat",
+	162:	"Verhinderung oder Herbeiführung des Bedingungseintritts:\n(1) Wird Eine Bedingung zum Nachteil der "
+			"anderen Partei wider Treu und Glauben verhindert, so gilt diese als eingetreten\n(2) Wird eine "
+			"Bedingung zum Nachteil der anderen Partei wider Treu und Glauben herbeigeführt, so gilt der Eintritt "
+			"als nicht erfolgt",
+	164:	"Wirkung der Erklärung des Vertreters:\n(1)\n   - WE die jemand innerhalb der ihm "
+			"zustehenden Vertretungsmacht abgibt, wirkt unmittelbar für und gegen den Vertretenen\n(2) Man muss"
+			" kenntlich machen in wessen Namen man handelt, sonst handelt man im eigenen Namen ",
+	314:	"Fristlose Kündigung:\n(1) Vorraussetzung: wichtiger Grund\n(2) Wenn wichtiger Grund eine "
+			"Pflichtverletzung ist:\n   - erfolglose Frist zu Abhilfe\n   - erfolglose Abmahnung",
+	604:	"Rückgabepflicht bei Leihe",
+	812:	"Herausgabeanspruch wegen ungerechtfertigter Bereicherung (oder 985)",
+	854:	"Besitz: tatsächliche Sachherrschaft",
+	903:	"Eigentum:\n- Umfassende rechtliche Herrschaft über eine Sache\n- Nur Eigentümer ist zur Veräußerung "
+			"berechtigt",
+	929:	"Vorraussetzungen für eine wirksame Übereignung / dingliche Einigung / Verfügungsgeschäft:\n1. Eigentümer"
+			" und Erwerber sind sich einig, dass die Sache übergehen werden soll\n2. Übergabe der Sache -> "
+			"tatsächliche Sachherrschaft\n3. Berechtigung des Veräußerers (siehe 903), Ausnahme: Insolvenz",
+	932:	"Gutgläubiger Erwerb von Nichtberechtigten:\n Wenn der Erwerber gutgläubig, dann wird er trotzdem "
+			"Eigentümer, auch wenn der Verkäufer nicht zum Verkauf berechtigt war\nAUSSER: dem wirklichen Eigentümer"
+			" wurde die Sache gestohlen (Abhandenkommen), 935I",
+	935:	"Kein gutgläubiger Erwerb von abhanden gekommenen Sachen:\nwenn die Sache dem Eigentümer gestohlen wurde",
+	985:	"Harausgabeanspruch: Der Eigentümer kann von dem Besitzer die Herausgabe der Sache verlangen (oder 812)",
+	986:	"Einwendung des Besitzers:\n Recht zum Besitz, wenn\n   - dingliches Recht zum Besitz (Pfandrecht)\n"
+			"   - obligatorisches Recht zum Besitz",
+	"242, 162I":	"Zugang einer Willenserklärung vorsätzlich (arglistig) verhindert\n-> WE ist rechtzeitig "
+					"eingegangen",
+	"280I+III, 283":	"Schadensersatz statt der Leistung",
+	}
 
+paragraph2 = [119,
+	122,
+	123,
+	130,
+	139,
+	142,
+	143,
+	162,
+	164,
+	314,
+	604,
+	812,
+	854,
+	903,
+	929,
+	932,
+	935,
+	985,
+	986,
+	"242, 162I",
+	"280I+III, 283"
+	]
+
+
+
+
+#Funktionen
 
 def alleeinmal():
 	os.system("Clear")
@@ -191,9 +272,10 @@ def intensiv():
 					break
 			lernen.append(paragraph[zz])
 			zufallszahlen.append(zz)
-		for i in range(3):
+		for i in range(4):
 			for j in range(anzahlvokabeln):	
 				os.system("clear")
+				print("Runde " + str(i+1) + "/4")
 				print(beschreibung[lernen[j]])
 				input()
 				print(lernen[j])
@@ -211,7 +293,6 @@ def intensiv():
 		os.system("Clear")
 		print("Nächster Stapel")
 		input()
-
 
 
 def zufälligalle():
@@ -233,6 +314,32 @@ def zufälligalle():
 
 
 
+
+
+# Hauptprogramm
+
+auswahl = True
+while auswahl == True:
+	os.system("clear")
+	print("Welche Kapitel möchtest du lernen?\n0: Kapitel 1-6\n1: Kapitel 7-12\n2: Kapitel 13-14")
+	try:
+		kapitel = int(input("-> "))
+	except:
+		continue
+	if kapitel == 0:
+		beschreibung = beschreibung1
+		paragraph = paragraph1
+		auswahl = False
+	if kapitel == 1:
+		beschreibung = beschreibung2
+		paragraph = paragraph2
+		auswahl = False
+	if kapitel == 2:
+		beschreibung = beschreibung3
+		paragraph = paragraph3
+		auswahl = False
+	else:
+		continue
 while True:
 	os.system("clear")
 	print("0: Alle Vokabeln einmal durchgehen")
