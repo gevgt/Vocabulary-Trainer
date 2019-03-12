@@ -127,7 +127,7 @@ paragraph1 = [121,
 beschreibung2 = {119:	"Anfechtbarkeit wegen Irrtums:\n(1) Inhaltsirrtum (25 gros) / Erklärungsirrtum Tippfehler\n"
 	"(2) Eigenschaftsirrtum (Irrtum über: Aussehen, Herkunft, Original/Fälschung ... Wert ist "
 	"KEINE Eigenschaft)",
-	122:	"Anpfechtungspflicht des Anfechtenden (Vertrauensschaden):\n(1)Der Anfechtende muss "
+	122:	"Schadensersatzpflicht des Anfechtenden (Vertrauensschaden):\n(1)Der Anfechtende muss "
 			"Anfechtungsgegner den Schaden ersetzen, der dadurch entstanden ist, dass er auf die "
 			"Gültigkeit der Erklärung vertraut hat\n(2) Vertrauensschaden muss nicht ersetzt werden, "
 			"wenn der Geschädigte den Grund der Anfechtbarkeit kannt oder infolge von Fahrlässigkeit "
@@ -165,7 +165,7 @@ beschreibung2 = {119:	"Anfechtbarkeit wegen Irrtums:\n(1) Inhaltsirrtum (25 gros
 	935:	"Kein gutgläubiger Erwerb von abhanden gekommenen Sachen:\nwenn die Sache dem Eigentümer gestohlen wurde",
 	985:	"Harausgabeanspruch: Der Eigentümer kann von dem Besitzer die Herausgabe der Sache verlangen (oder 812)",
 	986:	"Einwendung des Besitzers:\n Recht zum Besitz, wenn\n   - dingliches Recht zum Besitz (Pfandrecht)\n"
-			"   - obligatorisches Recht zum Besitz",
+			"   - obligatorisches Recht zum Besitz (Kaufvertrag, Mietvertrag)",
 	"242, 162I":	"Zugang einer Willenserklärung vorsätzlich (arglistig) verhindert\n-> WE ist rechtzeitig "
 					"eingegangen",
 	"280I+III, 283":	"Schadensersatz statt der Leistung",
@@ -197,6 +197,7 @@ paragraph2 = [119,
 
 
 
+
 #Funktionen
 
 def alleeinmal():
@@ -209,6 +210,7 @@ def alleeinmal():
 			os.system("clear")
 			index = random.randint(0, len(z)-1)
 			b = z[index]
+			print("Paragraph " + str(i+1) + "/" + str(len(paragraph)))
 			print(beschreibung[b])
 			input()
 			print(z[index])
@@ -255,7 +257,6 @@ def alleeinmal():
 			break
 
 
-
 def intensiv():
 	os.system("Clear")
 	anzahlvokabeln = int(input("Wie viele Vokabeln möchtest du jeweils intensiv lernen?\n-> "))
@@ -272,10 +273,15 @@ def intensiv():
 					break
 			lernen.append(paragraph[zz])
 			zufallszahlen.append(zz)
-		for i in range(4):
+		os.system("clear")
+		for j in range(int(anzahlvokabeln)):
+			print(str(lernen[j]) + " :\n" + str(beschreibung[lernen[j]]))
+			print()
+		input()
+		for i in range(6):
 			for j in range(anzahlvokabeln):	
 				os.system("clear")
-				print("Runde " + str(i+1) + "/4")
+				print("Runde " + str(i+1) + "/6")
 				print(beschreibung[lernen[j]])
 				input()
 				print(lernen[j])
