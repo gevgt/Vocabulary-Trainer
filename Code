@@ -124,18 +124,31 @@ paragraph1 = [121,
 	"311b I",
 	"387, 388"]
 
-beschreibung2 = {119:	"Anfechtbarkeit wegen Irrtums:\n(1) Inhaltsirrtum (25 gros) / Erklärungsirrtum Tippfehler\n"
-	"(2) Eigenschaftsirrtum (Irrtum über: Aussehen, Herkunft, Original/Fälschung ... Wert ist "
-	"KEINE Eigenschaft)",
+beschreibung2 = {2:	"Volljährigkeit tritt mit der Vollendung des 18. Lebensjahres ein",
+	104:	"Geschäftsunfähig:\n- Kinder <7\n- Geistig Behinderte",
+	105:	"Nichtigkeit der Willenserklärung:\nDie WE eines Geschäftsunfähigen ist nichtig",
+	106:	"Beschränkt geschäftsfähig:\nMinderjähriger, der >7",
+	107:	"Einwilligung des gesetzlichen Vertreters\nDer Minderjährige bedarf zu einer WE, durch die er nicht "
+			"lediglich einen rechtlichen Vorteil erlangt, der Einwilligung seines gesetzlichen Vertreters",
+	108:	"Vertragsschluss ohne Einwilligung:\n(1) Schließt ein Minderjähriger einen Vertrag ohne die "
+			"erforderliche Einwilligung des gesetzlichen Vertreter, so hängt die Wirksamkeit des Vertrages von der "
+			"Genehmigung des Vertreters ab. Genehmigung kann auch noch nachträglich erteilt werden (184)",
+	110:	"Bewirken der Leistung mit eigenen Mitteln: Ein von Minderjährigen geschlossner Vertrag "
+			"ohne Zustimmung der Eltern ist wirksam, wenn:\n- die Sache vom Taschengeld des Kindes bezahlt wurde\n- "
+			"die Summe vollständig auf Einmal bezahlt wurde",
+	119:	"Anfechtbarkeit wegen Irrtums:\n(1) Inhaltsirrtum (25 gros) / Erklärungsirrtum Tippfehler\n"
+			"(2) Eigenschaftsirrtum (Irrtum über: Aussehen, Herkunft, Original/Fälschung ... Wert ist "
+			"KEINE Eigenschaft)",
 	122:	"Schadensersatzpflicht des Anfechtenden (Vertrauensschaden):\n(1)Der Anfechtende muss "
 			"Anfechtungsgegner den Schaden ersetzen, der dadurch entstanden ist, dass er auf die "
 			"Gültigkeit der Erklärung vertraut hat\n(2) Vertrauensschaden muss nicht ersetzt werden, "
 			"wenn der Geschädigte den Grund der Anfechtbarkeit kannt oder infolge von Fahrlässigkeit "
 			"(276II) nicht kannte",
 	123:	"Anfechtbarkeit wegen Täuschung oder Drohung",
-	130:	"Wirksam werden der Willenserklärung gegenüber Abwesenden:\n(1)\n   - WE, die in Abwesenheit"
-			" abgegeben wird, wird wirksam, in dem Zeitpunkt, in welchem sie zugeht\n   - AUSSER, dem "
+	130:	"Wirksam werden der Willenserklärung gegenüber Abwesenden:\n(1) WE, die in Abwesenheit"
+			" abgegeben wird, wird wirksam, in dem Zeitpunkt, in welchem sie zugeht\n(2) AUSSER, dem "
 			"anderen geht vorher oder gleichzeitig ein Wiederruf zu",
+	134:	"Gesetzliches Verbot:\nEin Rechtsgeschäft, das gegen ein gesetzliches Verbot verstößt ist nichtig",
 	139:	"Teilnichtigkeit:\nIst ein Teil eines Rechtsgeschäft nichtig, so ist das ganze Rechtsgeschäft nichtig, "
 			"wenn nicht anzunehmen ist, dass es auch ohne den nichtigen Teil vorgenommen sein würde.",
 	142:	"Wirkung der Anfechtung: Wird ein Rechtsgeschäft angefochten, so wird es von Anfang an als nichtig "
@@ -146,12 +159,27 @@ beschreibung2 = {119:	"Anfechtbarkeit wegen Irrtums:\n(1) Inhaltsirrtum (25 gros
 			"anderen Partei wider Treu und Glauben verhindert, so gilt diese als eingetreten\n(2) Wird eine "
 			"Bedingung zum Nachteil der anderen Partei wider Treu und Glauben herbeigeführt, so gilt der Eintritt "
 			"als nicht erfolgt",
-	164:	"Wirkung der Erklärung des Vertreters:\n(1)\n   - WE die jemand innerhalb der ihm "
+	164:	"Wirkung der Erklärung des Vertreters:\n(1) WE die jemand innerhalb der ihm "
 			"zustehenden Vertretungsmacht abgibt, wirkt unmittelbar für und gegen den Vertretenen\n(2) Man muss"
 			" kenntlich machen in wessen Namen man handelt, sonst handelt man im eigenen Namen ",
+	179:	"Haftung des Vertreters ohne Vertretungsmacht:\n(1)Vertreter haftet selbst auf Erfüllung des Vertrages "
+			"oder auf Schadensersatz wegen Nichterfüllung\n(2) Vertreter haftet nur auf Ersatz des Vertrauensschadens"
+			" wenn der Vertreter das Fehlen der Vertretungsmacht nicht kannte\n(3) Wenn der Vertragspartner das "
+			"Fehlen der Vertretungsmacht kannte oder kennen musste, ist die Haftung des Vertreters ausgeschlossen",
+	182:	"Zustimmung der z.B. Eltern muss im Vorraus gegeben werden",
+	183:	"Ohne voherige Zustimmungist der Vertrag erst einmal schwebend unwirksam",
+	184:	"Nachträgliche Genehmigung: Vertrag wird wirksam",
 	314:	"Fristlose Kündigung:\n(1) Vorraussetzung: wichtiger Grund\n(2) Wenn wichtiger Grund eine "
 			"Pflichtverletzung ist:\n   - erfolglose Frist zu Abhilfe\n   - erfolglose Abmahnung",
 	604:	"Rückgabepflicht bei Leihe",
+	765:	"Vertragliche Pflichten bei der Bürgschaft",
+	766:	"Schriftform der Bürgschaftserklärung:\n- bestimmte Form, da besonders risikoreicher Vertrag\n- bei "
+			"nicht Einhaltung ist der Vertrag bzw auf seinen Abschluss gerichtete WE nach 125 nichtig",
+	771:	"Einrede der Vorrausklage:\nBürge kann die Zahlung verweigern, solange der Gläubiger nicht erfolglos die"
+			" Zwangsvollstreckung gegen den Hauptschuldner versucht hat",
+	773:	"Ausschluss der Einrede der Vorausklage\n- Bürger verzichtet auf die Einrede der Vorausklage\n- In "
+			"diesem Fall kann der Gläubiger sofort den Bürgen in Anspruch nehmen, ohne dass er sich erst an den "
+			"Hauptschuldner wenden muss",
 	812:	"Herausgabeanspruch wegen ungerechtfertigter Bereicherung (oder 985)",
 	854:	"Besitz: tatsächliche Sachherrschaft",
 	903:	"Eigentum:\n- Umfassende rechtliche Herrschaft über eine Sache\n- Nur Eigentümer ist zur Veräußerung "
@@ -166,22 +194,41 @@ beschreibung2 = {119:	"Anfechtbarkeit wegen Irrtums:\n(1) Inhaltsirrtum (25 gros
 	985:	"Harausgabeanspruch: Der Eigentümer kann von dem Besitzer die Herausgabe der Sache verlangen (oder 812)",
 	986:	"Einwendung des Besitzers:\n Recht zum Besitz, wenn\n   - dingliches Recht zum Besitz (Pfandrecht)\n"
 			"   - obligatorisches Recht zum Besitz (Kaufvertrag, Mietvertrag)",
+	"1626, 1629":	"Eltern = gesetzliche Vertreter",
+	"177I, 184I":	"Wenn der Vertreter überhaupt keine Vertretungsmacht hat oder aber die Grenzen einer ihm erteilten"
+					" Vertretungsmacht überschritten hat, kann dem Vertrag aber nachträglich noch zugestimmt werden",
 	"242, 162I":	"Zugang einer Willenserklärung vorsätzlich (arglistig) verhindert\n-> WE ist rechtzeitig "
 					"eingegangen",
 	"280I+III, 283":	"Schadensersatz statt der Leistung",
 	}
 
-paragraph2 = [119,
+paragraph2 = [2,
+	104,
+	105,
+	106,
+	107,
+	108,
+	110,
+	119,
 	122,
 	123,
 	130,
+	134,
 	139,
 	142,
 	143,
 	162,
 	164,
+	179,
+	182,
+	183,
+	184,
 	314,
 	604,
+	765,
+	766,
+	771,
+	773,
 	812,
 	854,
 	903,
@@ -190,6 +237,8 @@ paragraph2 = [119,
 	935,
 	985,
 	986,
+	"1626, 1629",
+	"177I, 184I",
 	"242, 162I",
 	"280I+III, 283"
 	]
