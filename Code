@@ -125,7 +125,8 @@ paragraph1 = [121,
 	"387, 388"]
 
 beschreibung2 = {2:	"Volljährigkeit tritt mit der Vollendung des 18. Lebensjahres ein",
-	104:	"Geschäftsunfähig:\n- Kinder <7\n- Geistig Behinderte",
+	104:	"Geschäftsunfähig:\n- Kinder <7\n- wer sich in einem die freie Willensbestimmung ausschließenden Zustand"
+		" befindet",
 	105:	"Nichtigkeit der Willenserklärung:\nDie WE eines Geschäftsunfähigen ist nichtig",
 	106:	"Beschränkt geschäftsfähig:\nMinderjähriger, der >7",
 	107:	"Einwilligung des gesetzlichen Vertreters\nDer Minderjährige bedarf zu einer WE, durch die er nicht "
