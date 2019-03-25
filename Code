@@ -11,7 +11,7 @@ import random, os
 beschreibung1 = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverzüglich) erfolgen",
 	125:	"Nichtigkeit wegen Formmangels",
 	138:	"Wucher",
-	145:	"Angebot + Anname:\n 1. RBW muss erkennbar sein\n 2. Erkklärung muss auf Abschluss des Vertrages "
+	145:	"Angebot:\n 1. RBW muss erkennbar sein\n 2. Erkklärung muss auf Abschluss des Vertrages "
 			"gerichtet sein\n 3. essentialia negotii müssen sehr genau bestimmt sein\n 4. uneingeschränkte Zustimmung",
 	146:	"Erlöschen des Antrags: Antrag erlischt, wenn er abgelehnt wurde oder nicht rechtzeitig angenommen wurde",
 	147:	"Wenn keine Annahmefrist bestimmt wurde\n 1. unter Anwesenden: unverzüglich\n 2. unter Abwesenden: "
@@ -21,10 +21,12 @@ beschreibung1 = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverz�
 	194:	"Anspruch: Das Recht von einem anderen ein Tun oder Unterlassen zu verlangen",
 	195:	"Verjährungsfrist: 3 Jahre",
 	199:	"Beginn der Regelmäßigen Verjährungsfrist: zum Jahresende in dem der Anspruch entstanden ist",
-	212:	"Neubeginn der Verjährung",
+	212:	"Neubeginn der Verjährung:\n(1) Verjährung beginnt neu, wenn\n   1. Schuldner dem Gläubiger gegenüber "
+			"den Anspruch anerkennt (durch Abschlagszahlungen, Zinszahlungen, Sicherheitsleistungen oder in anderer"
+			" Weise)\n   2. eine gerichtliche oder behördliche Vollstreckungshandlung vorgenommen oder beantragt wird",
 	214:	"Wirkung der Verjährung:\n(1) Nach Eintritt der Verjährung darf Schuldner Leistung verweigern" 
 			"\n(2) Geleistete Zahlungen können nicht zurückgefordert werden",
-	241:	"Pflichten aus dem Schuldverhältnis (Hauptleistungspflichten):\n(1) Gläubiger is berechtigt, von dem "
+	241:	"Pflichten aus dem Schuldverhältnis:\n(1) Hauptleistungspflichten: Gläubiger is berechtigt, von dem "
 			"Schuldner eine Leistung zu fordern, die auch aus einem Unterlassen bestehen kann.\n(2) "
 			"Rüchkischtsnahmepflichten: Das Schuldverhältnis kann zur Rücksicht "
 			"auf die Rechte, Rechtsgüter und Interessen des anderen Teils verpflichten.",
@@ -44,8 +46,9 @@ beschreibung1 = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverz�
 	280:	"Schadensersatz wegen Pflichtverletzung:\n- Vorraussetzung:\n   Schuldverhältnis (311)\n   und "
 			"Pflichtverletzung\n   Schuldner muss Pflichtverletzung zu vertreten haben\n   es muss ein Schaden"
 			" entstanden sein durch die PV\n- Beweislast beim Schuldner",
-	288:	"Verzugszinsen: 9 PP für Geschäftsleute und 5 PP für Verbaucher",
-	293:	"Annahmeverzug",
+	288:	"Verzugszinsen: 9 PP für Geschäftsleute und 5 PP für Verbaucher + Pauschale i.H.v. 40€ wenn kein "
+			"Verbraucher",
+	293:	"Annahmeverzug / Gläubigerverzug",
 	305:	"AGB",
 	311:	"(1) Zur Begründung eines Schuldverhältnisses ist ein Vetrag zwischen "
 			"den Beteiligten erorderlich\n(2)\nSchuldverhältnis entsteht auch, wenn:"
@@ -67,7 +70,7 @@ beschreibung1 = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverz�
 	662:	"Vertragstypische Pflichten beim Auftrag",
 	823:	"Schadensersatzpflichs:\n- setzt kein Schuldverhältnis vorraus\n- kein vertraglicher, sondern "
 			"gesetzlicher Anspruch\n- Gläubiger (Geschädigte) trägt die Beweislast",
-	831:	"Haftung für den Verrichtungsfehilfen:\n- Jeder der mit Wissen und Wollen des Geschäftsherrn in dessen "
+	831:	"Haftung für den Verrichtungsgehilfen:\n- Jeder der mit Wissen und Wollen des Geschäftsherrn in dessen "
 			"Aufgabenkreis tätig wird und von dessen Weisung abhängig ist\n- nur unselbstständige Hilfspersonen\n- "
 			"Schädiger kann sich entlasten (exkulpieren) indem er z.B. beweist, dass er die Hilfsperson sorgfältig "
 			"ausgewählt und überwacht hat",
@@ -125,8 +128,7 @@ paragraph1 = [121,
 	"387, 388"]
 
 beschreibung2 = {2:	"Volljährigkeit tritt mit der Vollendung des 18. Lebensjahres ein",
-	104:	"Geschäftsunfähig:\n- Kinder <7\n- wer sich in einem die freie Willensbestimmung ausschließenden Zustand"
-		" befindet",
+	104:	"Geschäftsunfähig:\n- Kinder <7\n- Geistig Behinderte",
 	105:	"Nichtigkeit der Willenserklärung:\nDie WE eines Geschäftsunfähigen ist nichtig",
 	106:	"Beschränkt geschäftsfähig:\nMinderjähriger, der >7",
 	107:	"Einwilligung des gesetzlichen Vertreters\nDer Minderjährige bedarf zu einer WE, durch die er nicht "
@@ -137,7 +139,7 @@ beschreibung2 = {2:	"Volljährigkeit tritt mit der Vollendung des 18. Lebensjahr
 	110:	"Bewirken der Leistung mit eigenen Mitteln: Ein von Minderjährigen geschlossner Vertrag "
 			"ohne Zustimmung der Eltern ist wirksam, wenn:\n- die Sache vom Taschengeld des Kindes bezahlt wurde\n- "
 			"die Summe vollständig auf Einmal bezahlt wurde",
-	119:	"Anfechtbarkeit wegen Irrtums:\n(1) Inhaltsirrtum (25 gros) / Erklärungsirrtum Tippfehler\n"
+	119:	"Anfechtbarkeit wegen Irrtums:\n(1) Inhaltsirrtum (25 gros) / Erklärungsirrtum (Tippfehler)\n"
 			"(2) Eigenschaftsirrtum (Irrtum über: Aussehen, Herkunft, Original/Fälschung ... Wert ist "
 			"KEINE Eigenschaft)",
 	122:	"Schadensersatzpflicht des Anfechtenden (Vertrauensschaden):\n(1)Der Anfechtende muss "
@@ -188,19 +190,19 @@ beschreibung2 = {2:	"Volljährigkeit tritt mit der Vollendung des 18. Lebensjahr
 	929:	"Vorraussetzungen für eine wirksame Übereignung / dingliche Einigung / Verfügungsgeschäft:\n1. Eigentümer"
 			" und Erwerber sind sich einig, dass die Sache übergehen werden soll\n2. Übergabe der Sache -> "
 			"tatsächliche Sachherrschaft\n3. Berechtigung des Veräußerers (siehe 903), Ausnahme: Insolvenz",
-	932:	"Gutgläubiger Erwerb von Nichtberechtigten:\n Wenn der Erwerber gutgläubig, dann wird er trotzdem "
+	932:	"Gutgläubiger Erwerb von Nichtberechtigten:\nWenn der Erwerber gutgläubig, dann wird er trotzdem "
 			"Eigentümer, auch wenn der Verkäufer nicht zum Verkauf berechtigt war\nAUSSER: dem wirklichen Eigentümer"
 			" wurde die Sache gestohlen (Abhandenkommen), 935I",
 	935:	"Kein gutgläubiger Erwerb von abhanden gekommenen Sachen:\nwenn die Sache dem Eigentümer gestohlen wurde",
 	985:	"Harausgabeanspruch: Der Eigentümer kann von dem Besitzer die Herausgabe der Sache verlangen (oder 812)",
-	986:	"Einwendung des Besitzers:\n Recht zum Besitz, wenn\n   - dingliches Recht zum Besitz (Pfandrecht)\n"
+	986:	"Einwendung des Besitzers:\nRecht zum Besitz, wenn\n   - dingliches Recht zum Besitz (Pfandrecht)\n"
 			"   - obligatorisches Recht zum Besitz (Kaufvertrag, Mietvertrag)",
 	"1626, 1629":	"Eltern = gesetzliche Vertreter",
 	"177I, 184I":	"Wenn der Vertreter überhaupt keine Vertretungsmacht hat oder aber die Grenzen einer ihm erteilten"
 					" Vertretungsmacht überschritten hat, kann dem Vertrag aber nachträglich noch zugestimmt werden",
 	"242, 162I":	"Zugang einer Willenserklärung vorsätzlich (arglistig) verhindert\n-> WE ist rechtzeitig "
 					"eingegangen",
-	"280I+III, 283":	"Schadensersatz statt der Leistung",
+	"280I+III, 283":	"Schadensersatz statt der Leistung: Vorraussetzungen in 281I+II+III+V",
 	}
 
 paragraph2 = [2,
@@ -244,7 +246,104 @@ paragraph2 = [2,
 	"280I+III, 283"
 	]
 
+beschreibung3 = {151:	"Annahme ohne Erklärung gegenüber dem Antragenden:\nVertrag kommt durch die Annahme des Antrags zustande,"
+	" ohne dass die Annahme dem Antragenden gegenüber erklärt zu werden braucht, wenn eine solche Erklärung nach der Verkehrssitte"
+	" nicht zu erwarten ist (Hotelreservierung)",
+	275:	"Ausschluss der Leistungspflicht:\n(1) Anspruch der Leistung ist ausgeschlossen,soweit "
+			"diese für den Schuldner oder für jedermann unmöglich ist.",
+	281:	"Vorraussetzungen um Schadensersatz statt der Leistung fordern zu können:\n(1) erfolglose"
+			" Bestimmung einer angemessenen Frist zur Leistung oder Nacherfüllung\n(2) Fristsetzung ist entbehrlich, "
+			"wenn Schuldner die Leistung ernsthaft und endgültig verweigert\n(3) Kommt nach Art der PV eine "
+			"Fristsetzung nicht in Frage -> Abmahnung",
+	285:	"(1) Anspruch auf das stellvertretende commudum",
+	286:	"Verzug des Schuldners:\n(1) Vorraussetzungen\n   - Fälliger Anspruch\n   - Schuldner leistet trotz "
+			"Mahnung nicht\n   -> Schuldner gerät in Verzug\n(2) Mahnung bedarf es nicht, wenn\n   - eine Zeit "
+			"nach dem Kalender bestimmt ist\n   - Schuldner die Leistung ernsthaft und endgültig verweigert\n  "
+			" - besondere Gründe, die den sofortigen Eintritt des Verzugs rechtfertigen\n(3) Schuldner einer "
+			"Endgeldforderung kommt spätestens in Verzug, wenn er nicht spätestens nach 30 Tagen und Zugang einer "
+			"Rechnung leistet\n(4) Schuldner kommt nicht in Verzug, wenn er den Umstand nicht zu vertreten hat",
+	300:	"Wirkung des Gläubigerverzugs:\n(I) Schuldner hat während des Verzugs des Gläubigers nur Vorsatz und grobe "
+			"Fahrlässigkeit zu vertreten",
+	323:	"Rücktritt wegen nicht oder nicht vertragsmäßig erbrachter Leistung (Rücktrittsrecht):\n Angemessene"
+			" Frist zur Leistung oder Nacherfüllung",
+	325:	"Schadensersatz und Rücktritt:\nDas Recht, bei einem GEGENSEITIGEN Vertrag Schaden zu verlangen, wird"
+			" durch den Rücktritt nicht ausgeschlossen",
+	326:	"Befreiung von der Gegenleistung und Rücktritt beim Ausschluss der Leistungspflicht:\n(1) Braucht "
+			"der Schuldner nach 275 I-III nicht zu leisten, entfällt der Anspruch auf die Gegenleistung\n(4) Der "
+			"z.B. bereits gezahlte Kaufpreis kann zurückgefordert werden (in Verbindung mit 346I)\n(5) "
+			"Braucht der Schuldner nicht zu leisten, kann der Gläubiger zurücktreten (Fristsetzung: 323)",
+	349:	"Erklärung des Rücktritts:\nRücktritt muss man durch Erklärung geltend machen",
+	355:	"Widerrufsrecht bei Verbrauchervertägen:\n(1)\n   - Widerruf erfolgt durch Erklärung\n   - muss "
+			"keine Begründung enthalten\n   - zur Fristwahrung genügt die rechtzeitige Absendung des Widerrufs"
+			"\n(2) Widerrufsfrist beträgt 14 Tage\n(3) Empfangene Leistungen sind unverzüglich zurückzugewähren",
+	357:	"Rechtsfolgen des Widerrufs",
+	363:	"Beweislast bei Annahme als Erfüllung",
+	434:	"Sachmangel",
+	437:	"Rechte des Käufers bei Mängeln:\nIst die Sache mangelhaft, kann der Käufer, wenn die Vorraussetzungen der"
+			" folgenden Vorschriften vorliegen und soweit nicht anders bestimmt ist\n   1. nach 439 Nacherfüllung\n"
+			"   2. nach 440, 323, 326V von dem Vertrag zurücktreten oder nach 441 den Kaufpreis mindern\n   3."
+			" Schadensersatz nach 440, 280, 281, 283 und 331a oder nach 284 Ersatz vergeblicher Aufwendungen",
+	438:	"Verjährung der Mängelansprüche:\n2 Jahre, danach hat der Verkäufer nach 241 Leistungsverweigerungsrecht",
+	439:	"Nacherfüllung:\n(1) als Nacherfüllung: Beseitigung des Mangels oder Lieferung einer mangelfreien Sache\n(2)"
+			" Verkäufer hat Aufwendungen zu tragen, die nötig sind, den Mangel zu beseitigen",
+	441:	"Minderung",
+	446:	"Gefahr- und Lastenübergang",
+	474:	"Verbrauchsgüterkauf: Kaufvertrag zwischen Verbraucher und Unternehmer",
+	476:	"Ein Unternehmer kann sich nicht auf eine vor Mitteilung des Mangels getroffene Vereinbarung berufen,"
+			" die zum Nachteil des Verbrauchers von 437, 439 abweicht",
+	477:	"Beweislastumkehr:\nZeigz sich innerhalb von 6 Monaten seit Gefahrenübergang ein Sachmangel, so wird "
+			"vermutet, dass die Sache bei Gefahrenübergang mangelhaft war",
+	816:	"Verfügung eines Nichtberechtigten (Erlösherausgabeanspruch):\nDer Nichtberechtigte ist dem Berechtigten zur "
+			"Herausgabe des Geleisteten verpflichtet",
+	"280I+II, 286":	"Schadensersatz wegen Verzögerung der Leistung (Bsp.: Anwaltskosten, die NACH der Mahnung "
+					"entstanden sind)",
+	"280I+III, 281":	"Schadensersatz: Leistung wird nicht erbracht, obwohl sie noch möglich ist (FRISTSETZUNG)",
+	"280I+III, 283":	"Schadensersatz: Leistungserbringung wird NACH Vertragsschluss unmöglich (KEINE Fristsetzung)",
+	"286, 288":	"Verzugszinsen: Vorraussetzungen + Schadensersatz",
+	"311aII":	"Schadensersatz: Leistungserbringung BEI Abschluss des Vertrages unmöglich:\n- Schadensersatz "
+				"statt der Leistung oder Ersatz seiner Aufwendung\n- gilt nicht, wenn Schuldner das "
+				"Leistungshindernis bei Vertragsschluss nicht kannte, oder nicht zu vertreten hat",
+	"312c":	"Fernabsatzverträge",
+	"326IV, 346I":	"Kaufpreis wurde gezahlt, Sache kann wegen unmöglichkeit aber nicht mehr geliefert werden"
+					" -> Kaufpreis kann zurückgefordert werden",
+	"offerta ad incertas personas":	"Angebot an unbestimmte Personen:\nGrundsätzlich setzt ein wirksames Angebot"
+			" voraus, dass die Vertragsparteien bestimmt sind -> das hier ist die Ausnahme dazu",
+	"protestatio facto contraria":	"Ein zum Ausdruck gebrachter Vorbehalt ist unwirksam, wenn er mit dem "
+			"gleichzeitigen, eigenen Verhalten faktisch in Widerspruch steht"}
 
+
+paragraph3 = [151,
+	275,
+	281,
+	285,
+	286,
+	300,
+	323,
+	325,
+	326,
+	349,
+	355,
+	357,
+	363,
+	434,
+	437,
+	438,
+	439,
+	441,
+	446,
+	474,
+	476,
+	477,
+	816,
+	"280I+II, 286",
+	"280I+III, 281",
+	"280I+III, 283",
+	"286, 288",
+	"311aII",
+	"312c",
+	"326IV, 346I",
+	"offerta ad incertas personas",
+	"protestatio facto contraria"]
 
 
 
@@ -377,7 +476,7 @@ def zufälligalle():
 auswahl = True
 while auswahl == True:
 	os.system("clear")
-	print("Welche Kapitel möchtest du lernen?\n0: Kapitel 1-6\n1: Kapitel 7-12\n2: Kapitel 13-14")
+	print("Welche Kapitel möchtest du lernen?\n0: Kapitel 1-6\n1: Kapitel 7-12\n2: Kapitel 13-16\n3: Alle")
 	try:
 		kapitel = int(input("-> "))
 	except:
@@ -394,6 +493,10 @@ while auswahl == True:
 		beschreibung = beschreibung3
 		paragraph = paragraph3
 		auswahl = False
+	if kapitel ==3:
+		beschreibung = {**{**beschreibung1, **beschreibung2}, **beschreibung3}
+		paragraph = paragraph1 + paragraph2 + paragraph3
+		auswahl = False
 	else:
 		continue
 while True:
@@ -406,7 +509,6 @@ while True:
 	try:
 		modus = int(input("-> "))
 	except:
-		print("Wrong Input ...")
 		continue
 	if modus == 0:
 		alleeinmal()
