@@ -454,8 +454,8 @@ def zufälligalle():
 	os.system("Clear")
 	while True:
 		os.system("clear")
-		z = random.choice(y)
-		print(x[z])
+		z = random.choice(paragraph)
+		print(beschreibung[z])
 		input()
 		print(z)
 		print("\n\n")
