@@ -1,6 +1,7 @@
 #Module
 
-import random, os
+import random, os, time
+import numpy as np
 
 
 
@@ -8,7 +9,11 @@ import random, os
 
 # Kapitel
 
-beschreibung1 = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverzüglich) erfolgen",
+kapitel = []
+fragen = []
+
+#Kapitel 1
+kapitel1 = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverzüglich) erfolgen",
 	125:	"Nichtigkeit wegen Formmangels",
 	138:	"Wucher",
 	145:	"Angebot:\n 1. RBW muss erkennbar sein\n 2. Erkklärung muss auf Abschluss des Vertrages "
@@ -81,12 +86,15 @@ beschreibung1 = {121:	"Anfechtungsfrist: muss ohne Schuldhaftes Zögern (unverz�
 	"280I, 311II, 241II":	"Culpa in contrahendo: Wegen Verletzung der Rücksichtsnahmepflichten aus einem "
 	"vorvertraglichen oder vertragsähnlichen Schuldverhältnis entsteht ein Schadensersatzanspruch",
 	"311b I":	"Verträge über Grundstücke: bedarf einer notariellen Beurkundung",
-	"387, 388":	"Aufrechnung",
-	}
+	"387, 388":	"Aufrechnung",}
+kapitel.append(kapitel1)
+fragen.append([x for x in kapitel1.keys()])
 
-paragraph1 = [x for x in beschreibung1.keys()]
 
-beschreibung2 = {2:	"Volljährigkeit tritt mit der Vollendung des 18. Lebensjahres ein",
+
+
+#Kapitel 2
+kapitel2 = {2:	"Volljährigkeit tritt mit der Vollendung des 18. Lebensjahres ein",
 	104:	"Geschäftsunfähig:\n- Kinder <7\n- Geistig Behinderte",
 	105:	"Nichtigkeit der Willenserklärung:\nDie WE eines Geschäftsunfähigen ist nichtig",
 	106:	"Beschränkt geschäftsfähig:\nMinderjähriger, der >7",
@@ -161,14 +169,15 @@ beschreibung2 = {2:	"Volljährigkeit tritt mit der Vollendung des 18. Lebensjahr
 					" Vertretungsmacht überschritten hat, kann dem Vertrag aber nachträglich noch zugestimmt werden",
 	"242, 162I":	"Zugang einer Willenserklärung vorsätzlich (arglistig) verhindert\n-> WE ist rechtzeitig "
 					"eingegangen",
-	"280I+III, 283":	"Schadensersatz statt der Leistung: Vorraussetzungen in 281I+II+III+V",
-	}
-
-paragraph2 = [x for x in beschreibung2.keys()]
-
+	"280I+III, 283":	"Schadensersatz statt der Leistung: Vorraussetzungen in 281I+II+III+V",}
+kapitel.append(kapitel2)
+fragen.append([x for x in kapitel2.keys()])
 
 
-beschreibung3 = {151:	"Annahme ohne Erklärung gegenüber dem Antragenden:\nVertrag kommt durch die Annahme des Antrags zustande,"
+
+
+#Kapitel 3
+kapitel3 = {151:	"Annahme ohne Erklärung gegenüber dem Antragenden:\nVertrag kommt durch die Annahme des Antrags zustande,"
 	" ohne dass die Annahme dem Antragenden gegenüber erklärt zu werden braucht, wenn eine solche Erklärung nach der Verkehrssitte"
 	" nicht zu erwarten ist (Hotelreservierung)",
 	275:	"Ausschluss der Leistungspflicht:\n(1) Anspruch der Leistung ist ausgeschlossen,soweit "
@@ -232,9 +241,12 @@ beschreibung3 = {151:	"Annahme ohne Erklärung gegenüber dem Antragenden:\nVert
 			" voraus, dass die Vertragsparteien bestimmt sind -> das hier ist die Ausnahme dazu",
 	"protestatio facto contraria":	"Ein zum Ausdruck gebrachter Vorbehalt ist unwirksam, wenn er mit dem "
 			"gleichzeitigen, eigenen Verhalten faktisch in Widerspruch steht"}
+kapitel.append(kapitel3)
+fragen.append([x for x in kapitel3.keys()])
 
 
-paragraph3 = [x for x in beschreibung3.keys()]
+
+
 
 
 
@@ -345,6 +357,7 @@ def zufälligalle():
 	os.system("Clear")
 	while True:
 		os.system("clear")
+		#input()
 		z = random.choice(paragraph)
 		print(beschreibung[z])
 		input()
@@ -367,29 +380,26 @@ def zufälligalle():
 auswahl = True
 while auswahl == True:
 	os.system("clear")
-	print("Welche Kapitel möchtest du lernen?\n0: Kapitel 1-6\n1: Kapitel 7-12\n2: Kapitel 13-16\n3: Alle")
+	print("Welche Kapitel möchtest du lernen?")
+	for i in range(len(kapitel)):
+		print(str(i) + ": Kapitel " + str(i+1) + "\n")
+	print(str(i+1) + ": Alle")
 	try:
-		kapitel = int(input("-> "))
+		kapitel_nr = int(input("-> "))
+		if kapitel_nr in np.arange(len(kapitel)):
+			beschreibung = kapitel[kapitel_nr]
+			paragraph = fragen[kapitel_nr]
+			auswahl = False
+		elif kapitel_nr == len(kapitel):
+			beschreibung = {**{**kapitel1, **kapitel2}, **kapitel3}
+			paragraph = np.array([])
+			for i in range(len(fragen)):
+				paragraph = np.append(paragraph, fragen[i])
+			paragraph = list(paragraph)
+			auswahl = False
 	except:
 		continue
-	if kapitel == 0:
-		beschreibung = beschreibung1
-		paragraph = paragraph1
-		auswahl = False
-	if kapitel == 1:
-		beschreibung = beschreibung2
-		paragraph = paragraph2
-		auswahl = False
-	if kapitel == 2:
-		beschreibung = beschreibung3
-		paragraph = paragraph3
-		auswahl = False
-	if kapitel ==3:
-		beschreibung = {**{**beschreibung1, **beschreibung2}, **beschreibung3}
-		paragraph = paragraph1 + paragraph2 + paragraph3
-		auswahl = False
-	else:
-		continue
+
 while True:
 	os.system("clear")
 	print("0: Alle Vokabeln einmal durchgehen")
