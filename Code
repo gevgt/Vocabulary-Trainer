@@ -372,7 +372,11 @@ def zufälligalle():
 			continue
 
 
-
+def arange(x):
+	array = []
+	for i in range(x):
+		array.append(i)
+	return array
 
 
 # Hauptprogramm
